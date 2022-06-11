@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+        "**/node_modules/": true
+    },
+    "cSpell.words": [
+        "Anurag",
+        "asynciterable",
+        "cloudinary",
+        "commitlint",
+        "geoip",
+        "Kumar",
+        "middlewares",
+        "mtgen",
+        "nuxt",
+        "nuxtjs",
+        "otpauth",
+        "qrcode",
+        "tsgen",
+        "vuetify"
+    ]
+}

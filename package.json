@@ -1,0 +1,30 @@
+{
+    "name": "spectrum",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "workspaces": [
+        "apps/*"
+    ],
+    "scripts": {
+        "dev": "lerna run dev --parallel",
+        "build": "lerna run build",
+        "start": "lerna run start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anuragkumar19/spectrum.git"
+    },
+    "author": "Anurag Kumar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/anuragkumar19/spectrum/issues"
+    },
+    "homepage": "https://github.com/anuragkumar19/spectrum#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^17.0.2",
+        "@commitlint/config-conventional": "^17.0.2",
+        "husky": "^8.0.1",
+        "lerna": "^5.1.0"
+    }
+}
