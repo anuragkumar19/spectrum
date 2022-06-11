@@ -17,5 +17,6 @@
         "qrcode",
         "tsgen",
         "vuetify"
-    ]
+    ],
+    "conventionalCommits.scopes": ["all"]
 }
