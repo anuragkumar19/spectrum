@@ -9,7 +9,9 @@
     "scripts": {
         "dev": "lerna run dev --parallel",
         "build": "lerna run build",
-        "start": "lerna run start"
+        "start": "lerna run start",
+        "new-version": "lerna version --conventional-commits --yes",
+        "diff": "lerna diff"
     },
     "repository": {
         "type": "git",
