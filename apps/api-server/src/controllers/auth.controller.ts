@@ -456,7 +456,9 @@ export const refreshToken = expressAsyncHandler(async (req, res) => {
         const accessToken = user.generateAccessToken(payload.tokenVersion)
 
         res.status(200).json({
-            accessToken,
+            tokens: {
+                accessToken,
+            },
         })
     } catch (err) {
         res.status(401)
