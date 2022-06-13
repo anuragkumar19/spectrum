@@ -20,5 +20,5 @@
         "tsgen",
         "vuetify"
     ],
-    "conventionalCommits.scopes": ["all", "server"]
+    "conventionalCommits.scopes": ["all", "server", "web"]
 }
