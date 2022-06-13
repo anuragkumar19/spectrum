@@ -77,7 +77,7 @@ export default {
     },
     strategies: {
       local: {
-        scheme: "~/schemes/customScheme",
+        scheme: "~/schemes/customScheme.js",
         token: {
           property: "tokens.accessToken",
           maxAge: 60 * 9, // 9 minutes
