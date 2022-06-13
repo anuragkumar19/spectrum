@@ -1,1 +1,1 @@
-web: node ./app/api-server/dist/index.js
+web: node ./apps/api-server/dist/index.js
