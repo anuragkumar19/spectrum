@@ -8535,9 +8535,9 @@ mongodb@4.5.0:
     saslprep "^1.0.3"
 
 mongoose-tsgen@^9.0.6:
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/mongoose-tsgen/-/mongoose-tsgen-9.0.6.tgz#d931728d24a3fa16e6d543c8e3caae016b8f4790"
-  integrity sha512-kxf4aoGQJ0sOC1Iwe0D8gylhYlRTjXZ2feCuoEJIei6QaMiSsBWZrk/Pgb8UtQOrPJT762jws9+ug76YkxQLEA==
+  version "9.0.7"
+  resolved "https://registry.yarnpkg.com/mongoose-tsgen/-/mongoose-tsgen-9.0.7.tgz#3b1614d39a6746f4818157c05489863403760eff"
+  integrity sha512-yQ1bBFoeIfCJPYHOZYW1zuhgrZUp9qWUc/oMq8acrvN5od5TyGWZAtyLGwFnWgjzHz2C95w0e3nPDhRGo/Kt3g==
   dependencies:
     "@oclif/command" "^1.8.0"
     "@oclif/config" "^1.17.0"
