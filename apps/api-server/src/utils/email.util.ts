@@ -25,7 +25,14 @@ export const sendOtp = async (
     const transporter = await getTransporter()
 
     const html = await ejs.renderFile(
-        path.join(path.resolve(), 'views', 'emails', 'otp.ejs'),
+        path.join(
+            path.resolve(),
+            'apps',
+            'api-server',
+            'views',
+            'emails',
+            'otp.ejs'
+        ),
         { otp, type }
     )
 
