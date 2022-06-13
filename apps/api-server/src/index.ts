@@ -1,6 +1,6 @@
 import 'colors'
 import cors from 'cors'
-import 'dotenv-safe/config'
+import 'dotenv/config'
 import express from 'express'
 import helmet from 'helmet'
 import morgan from 'morgan'
