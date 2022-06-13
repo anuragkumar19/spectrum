@@ -17,7 +17,9 @@ export const getLoggedInDevices: Handler = (req, res) => {
     const user = req.user!
 
     res.status(200).json({
-        devices: user.devices,
+        devices: user.devices.sort((a, b) =>
+            a.createdAt! > b.createdAt! ? -1 : 1
+        ),
     })
 }
 

@@ -6,7 +6,7 @@
     "scripts": {
         "watch": "tsc --watch",
         "build": "tsc",
-        "start": "node dist/index.ts",
+        "start": "node dist/index.js",
         "dev:start": "nodemon dist/index.js",
         "dev": "concurrently \"npm run watch\" \"npm run dev:start\"",
         "gen-env": "gen-env-types .env -o src/env.d.ts -e .",

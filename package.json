@@ -11,6 +11,7 @@
         "build": "lerna run build",
         "start": "lerna run start",
         "new-version": "lerna version --conventional-commits --yes",
+        "start:server": "lerna run start --scope=@spectrum/api-server",
         "diff": "lerna diff"
     },
     "repository": {

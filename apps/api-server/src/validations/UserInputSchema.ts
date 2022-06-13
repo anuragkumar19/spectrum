@@ -109,7 +109,7 @@ export const updatePasswordSchema = Joi.object({
 })
 
 export const updateBioSchema = Joi.object({
-    bio: Joi.string().max(500).empty(),
+    bio: Joi.string().max(500).allow(''),
 })
 
 export const verifySecondaryEmailSchema = Joi.object({

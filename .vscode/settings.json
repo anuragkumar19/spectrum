@@ -5,6 +5,7 @@
     "cSpell.words": [
         "Anurag",
         "asynciterable",
+        "axios",
         "cloudinary",
         "commitlint",
         "geoip",
@@ -14,9 +15,10 @@
         "nuxt",
         "nuxtjs",
         "otpauth",
+        "padless",
         "qrcode",
         "tsgen",
         "vuetify"
     ],
-    "conventionalCommits.scopes": ["all"]
+    "conventionalCommits.scopes": ["all", "server"]
 }

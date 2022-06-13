@@ -1,18 +1,20 @@
 <template>
-  <v-app style="background: #f5fbff; overflow: auto; height: 100vh">
+  <v-app
+    style="
+      background: url('/blob.svg') no-repeat center center/cover;
+      overflow: auto;
+    "
+  >
     <v-main>
-      <Navbar />
       <v-container>
         <Nuxt />
       </v-container>
-      <FooterSocial />
     </v-main>
   </v-app>
 </template>
-
 <script>
 export default {
-  name: "DefaultLayout",
+  name: "AuthLayout",
 };
 </script>
 <style>

@@ -51,6 +51,7 @@ const UserSchema: UserSchema = new mongoose.Schema(
         },
         bio: {
             type: String,
+            default: '',
         },
         password: {
             type: String,

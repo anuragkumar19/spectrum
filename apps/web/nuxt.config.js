@@ -3,8 +3,8 @@ import colors from "vuetify/es5/util/colors";
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - web",
-    title: "web",
+    titleTemplate: "%s - Spectrum",
+    title: "",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -33,26 +33,26 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    "@nuxtjs/toast",
+    "@nuxtjs/auth-next",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: "/",
+    baseURL: `${process.env.SERVER_URL}/api/v1`,
   },
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: "en",
-    },
+  toast: {
+    position: "bottom-right",
+    duration: 3000,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -66,7 +66,48 @@ export default {
       },
     },
   },
+  auth: {
+    cookie: {
+      options: {
+        maxAge: 60 * 60 * 24 * 365 * 50, // 50 years
+      },
+    },
+    redirect: {
+      logout: "/login",
+    },
+    strategies: {
+      local: {
+        scheme: "~/schemes/customScheme",
+        token: {
+          property: "tokens.accessToken",
+          maxAge: 60 * 9, // 9 minutes
+          global: true,
+          type: "Bearer",
+        },
+        refreshToken: {
+          property: "tokens.refreshToken",
+          data: "refreshToken",
+          maxAge: 60 * 60 * 24 * 30 * 12 * 50, // 50 years
+        },
+        user: {
+          property: "user",
+          autoFetch: true,
+        },
+        endpoints: {
+          login: { url: "/auth/login", method: "post" },
+          mfaLogin: { url: "/auth/mfa/validate", method: "post" },
+          refresh: { url: "/auth/refresh", method: "post" },
+          user: { url: "/user/me", method: "get" },
+          logout: { url: "/auth/logout", method: "post" },
+        },
+        // autoLogout: false
+      },
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  router: {
+    middleware: ["auth"],
+  },
 };
