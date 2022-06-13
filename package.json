@@ -9,7 +9,7 @@
     "scripts": {
         "dev": "lerna run dev --parallel",
         "build": "lerna run build",
-        "start": "lerna run start",
+        "start": "lerna run start --parallel",
         "new-version": "lerna version --conventional-commits --yes",
         "start:server": "lerna run start --scope=@spectrum/api-server",
         "diff": "lerna diff"
