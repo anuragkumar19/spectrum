@@ -1,1 +1,1 @@
-web: yarn start:server 
+web: node ./app/api-server/dist/index.js
