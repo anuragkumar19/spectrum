@@ -1,10 +1,10 @@
-import jwt, { JwtPayload } from 'jsonwebtoken'
-import expressAsyncHandler from 'express-async-handler'
-import { User } from '../models/user.model'
 import { Handler } from 'express'
-import { validate } from './validate.middleware'
-import { passwordVerifySchema } from '../validations/UserInputSchema'
+import expressAsyncHandler from 'express-async-handler'
 import { Schema } from 'joi'
+import jwt, { JwtPayload } from 'jsonwebtoken'
+import { User } from '../models/user.model'
+import { passwordVerifySchema } from '../validations/UserInputSchema'
+import { validate } from './validate.middleware'
 
 export const authGuard = expressAsyncHandler(async (req, res, next) => {
     const token = req.header('Authorization')

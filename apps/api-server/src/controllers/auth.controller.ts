@@ -3,9 +3,10 @@ import expressAsyncHandler from 'express-async-handler'
 import { lookup } from 'geoip-lite'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 import mongoose from 'mongoose'
-import parser from 'ua-parser-js'
-import speakeasy from 'speakeasy'
 import QRcode from 'qrcode'
+import speakeasy from 'speakeasy'
+import parser from 'ua-parser-js'
+import { SendOtpType } from '../constants'
 import { UserDeviceDocument } from '../interfaces/mongoose.gen'
 import { User } from '../models/user.model'
 import { sendOtp } from '../utils/email.util'
@@ -56,7 +57,7 @@ export const register = expressAsyncHandler(async (req, res) => {
     }
 
     await user.save()
-    await sendOtp(email, otp, 'verify')
+    await sendOtp(email, otp, SendOtpType.VERIFY)
 
     res.status(200).json({
         message: 'Otp sent to you email!',
@@ -133,7 +134,7 @@ export const forgotPassword = expressAsyncHandler(async (req, res) => {
 
     await user.save()
 
-    await sendOtp(email, otp, 'reset')
+    await sendOtp(email, otp, SendOtpType.RESET)
 
     res.status(200).json({
         message: 'Otp sent to you email!',
@@ -420,7 +421,7 @@ export const sendMfaOtp = expressAsyncHandler(async (req, res) => {
 
     await user.save()
 
-    await sendOtp(user.email, otp, 'mfa')
+    await sendOtp(user.email, otp, SendOtpType.MFA)
 
     res.status(200).json({
         message: 'Otp sent',

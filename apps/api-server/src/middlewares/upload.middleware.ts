@@ -1,9 +1,10 @@
-import multer from 'multer'
 import crypto from 'crypto'
-import { CloudinaryStorage } from 'multer-storage-cloudinary'
-import expressAsyncHandler from 'express-async-handler'
-import cloudinary from '../config/cloudinary.config'
 import { Handler } from 'express'
+import expressAsyncHandler from 'express-async-handler'
+import multer from 'multer'
+import { CloudinaryStorage } from 'multer-storage-cloudinary'
+import { UploadType } from '../constants'
+import cloudinary from '../config/cloudinary.config'
 
 //  Multer Cloudinary Storage
 const storage = new CloudinaryStorage({
@@ -17,7 +18,7 @@ const storage = new CloudinaryStorage({
 })
 
 export const upload = (
-    type: 'image' | 'video' | 'any',
+    type: UploadType,
     field: string,
     sizeLimit?: number,
     multiple?: boolean

@@ -1,7 +1,7 @@
 import ejs from 'ejs'
 import { createTransport } from 'nodemailer'
 import path from 'path'
-import { __prod__ } from '../constants'
+import { SendOtpType } from '../constants'
 
 async function getTransporter() {
     let options = {
@@ -20,7 +20,7 @@ async function getTransporter() {
 export const sendOtp = async (
     email: string,
     otp: number,
-    type: 'verify' | 'reset' | 'mfa' | 'verify-secondary-email'
+    type: SendOtpType
 ) => {
     const transporter = await getTransporter()
 
@@ -31,19 +31,19 @@ export const sendOtp = async (
 
     let subject
 
-    if (type === 'verify') {
+    if (type === SendOtpType.VERIFY) {
         subject = 'Spectrum - Verify your account'
     }
 
-    if (type === 'reset') {
+    if (type === SendOtpType.RESET) {
         subject = 'Spectrum - Reset your password'
     }
 
-    if (type === 'mfa') {
+    if (type === SendOtpType.MFA) {
         subject = 'Spectrum - OTP for MFA'
     }
 
-    if (type === 'verify-secondary-email') {
+    if (type === SendOtpType.VERIFY_SECONDARY_EMAIL) {
         subject = 'Spectrum - Verify your secondary email'
     }
 

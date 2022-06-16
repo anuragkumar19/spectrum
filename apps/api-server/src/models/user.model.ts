@@ -61,24 +61,14 @@ const UserSchema: UserSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-        otp: {
-            type: String,
-        },
-        otpExpiry: {
-            type: Number,
-        },
-        secondaryEmail: {
-            type: String,
-        },
+        otp: String,
+        otpExpiry: Number,
+        secondaryEmail: String,
+        secondaryEmailOtp: String,
+        secondaryEmailOtpExpiry: Number,
         isSecondaryEmailVerified: {
             type: Boolean,
             default: false,
-        },
-        secondaryEmailOtp: {
-            type: String,
-        },
-        secondaryEmailOtpExpiry: {
-            type: Number,
         },
         tokenVersion: {
             type: Number,
@@ -96,12 +86,8 @@ const UserSchema: UserSchema = new mongoose.Schema(
         },
         mfaTempSecret: Object,
         mfaSecret: Object,
-        mfaOtp: {
-            type: String,
-        },
-        mfaOtpExpiry: {
-            type: Number,
-        },
+        mfaOtp: String,
+        mfaOtpExpiry: Number,
     },
     {
         timestamps: true,

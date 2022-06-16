@@ -20,6 +20,7 @@ const username = Joi.string()
     .lowercase()
     .custom(usernameValidator)
 const password = Joi.string().min(8).required()
+const matchPassword = Joi.string().required()
 const otp = Joi.number().required().min(100000).max(999999)
 
 const identifierValidator: Joi.CustomValidator = (value, helpers) => {
@@ -64,7 +65,7 @@ export const forgotPasswordSchema = Joi.object({
 
 export const loginSchema = Joi.object({
     identifier: Joi.string().required().custom(identifierValidator),
-    password,
+    password: matchPassword,
 })
 
 export const refreshTokenSchema = Joi.object({
@@ -72,11 +73,11 @@ export const refreshTokenSchema = Joi.object({
 })
 
 export const passwordVerifySchema = Joi.object({
-    password,
+    password: matchPassword,
 })
 
 export const enableDisableMfaSchema = Joi.object({
-    password,
+    password: matchPassword,
     type: Joi.string().required().valid('emailOtp', 'authenticator'),
 })
 
@@ -87,7 +88,7 @@ export const verifyMfaSchema = Joi.object({
 export const mfaValidateSchema = Joi.object({
     identifier: Joi.string().required().custom(identifierValidator),
     mfaType: Joi.string().required().valid('emailOtp', 'authenticator'),
-    password,
+    password: matchPassword,
     mfaCode: otp,
 })
 
@@ -104,7 +105,7 @@ export const secondaryEmailSchema = Joi.object({
 })
 
 export const updatePasswordSchema = Joi.object({
-    oldPassword: password,
+    oldPassword: matchPassword,
     newPassword: password,
 })
 

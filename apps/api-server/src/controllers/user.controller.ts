@@ -1,9 +1,10 @@
+import crypto from 'crypto'
 import { Handler } from 'express'
 import expressAsyncHandler from 'express-async-handler'
-import crypto from 'crypto'
-import { genOtp } from '../utils/otp.util'
+import { SendOtpType } from '../constants'
 import { User } from '../models/user.model'
 import { sendOtp } from '../utils/email.util'
+import { genOtp } from '../utils/otp.util'
 
 export const getLoggedInUser: Handler = (req, res) => {
     const user = req.user!
@@ -23,7 +24,6 @@ export const getLoggedInDevices: Handler = (req, res) => {
     })
 }
 
-// avatar
 export const updateName = expressAsyncHandler(async (req, res) => {
     const user = req.user!
 
@@ -218,7 +218,7 @@ export const getOtpForSecondaryEmail = expressAsyncHandler(async (req, res) => {
 
     await user.save()
 
-    await sendOtp(user.secondaryEmail, otp, 'verify-secondary-email')
+    await sendOtp(user.secondaryEmail, otp, SendOtpType.VERIFY_SECONDARY_EMAIL)
 
     res.status(200).json({
         message: 'OTP sent',
