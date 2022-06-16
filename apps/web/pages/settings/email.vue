@@ -276,10 +276,7 @@ export default {
       (v) => !!v || "Email is required",
       (v) => /.+@.+\..+/.test(v) || "Email must be valid",
     ],
-    passwordRules: [
-      (v) => !!v || "Password is required",
-      (v) => (v && v.length >= 8) || "Password must be at least 8 characters",
-    ],
+    passwordRules: [(v) => !!v || "Password is required"],
     valid2: false,
     otp: "",
     dialog2: false,

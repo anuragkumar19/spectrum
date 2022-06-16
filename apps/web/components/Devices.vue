@@ -78,10 +78,7 @@ export default {
       password: "",
       valid: false,
       submitting: false,
-      passwordRules: [
-        (v) => !!v || "Password is required",
-        (v) => v.length >= 8 || "Password must be at least 8 characters",
-      ],
+      passwordRules: [(v) => !!v || "Password is required"],
     };
   },
   async fetch() {

@@ -150,10 +150,7 @@ export default {
       valid: false,
       submitting: false,
       identifierRules: [(v) => !!v || "Username or email is required"],
-      passwordRules: [
-        (v) => !!v || "Password is required",
-        (v) => (v && v.length >= 8) || "Password must be at least 8 characters",
-      ],
+      passwordRules: [(v) => !!v || "Password is required"],
     };
   },
   methods: {

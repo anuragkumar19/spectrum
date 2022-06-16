@@ -89,7 +89,6 @@ export default {
           /^[a-zA-Z0-9._]+$/.test(v) ||
           "Username must contain only letters, numbers, periods(.) and underscores(_)",
       ],
-      usernameRules: [(v) => !!v || "Username is required"],
       passwordRules: [
         (v) => !!v || "Password is required",
         (v) => (v && v.length >= 8) || "Password must be at least 8 characters",

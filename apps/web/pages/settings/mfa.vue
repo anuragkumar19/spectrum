@@ -217,10 +217,7 @@ export default {
       secret: "",
       valid: false,
       valid2: false,
-      passwordRules: [
-        (v) => !!v || "Password is required",
-        (v) => v.length >= 8 || "Password must be at least 8 characters long",
-      ],
+      passwordRules: [(v) => !!v || "Password is required"],
     };
   },
   methods: {

@@ -91,10 +91,7 @@ export default {
       activeText: "",
       valid: false,
       password: "",
-      passwordRules: [
-        (v) => !!v || "Password is required",
-        (v) => v.length >= 8 || "Password must be at least 8 characters",
-      ],
+      passwordRules: [(v) => !!v || "Password is required"],
       submitting: false,
     };
   },

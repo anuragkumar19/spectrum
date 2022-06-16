@@ -55,10 +55,7 @@ export default {
     newPassword: "",
     submitting: false,
     valid: false,
-    oldPasswordRules: [
-      (v) => !!v || "Old Password is required",
-      (v) => v.length >= 8 || "Password must be at least 8 characters",
-    ],
+    oldPasswordRules: [(v) => !!v || "Old Password is required"],
     newPasswordRules: [
       (v) => !!v || "New Password is required",
       (v) => v.length >= 8 || "Password must be at least 8 characters",
