@@ -4,7 +4,6 @@ declare global {
       PORT: string;
       NODE_ENV: string;
       MONGO_URI: string;
-      DEFAULT_AVATAR: string;
       REFRESH_TOKEN_SECRET: string;
       ACCESS_TOKEN_SECRET: string;
       SMTP_HOST: string;
