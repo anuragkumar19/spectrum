@@ -12,7 +12,8 @@
         "start": "lerna run start --parallel",
         "new-version": "lerna version --conventional-commits --yes",
         "start:server": "lerna run start --scope=@spectrum/api-server",
-        "diff": "lerna diff"
+        "diff": "lerna diff",
+        "clean": "./clean.sh"
     },
     "repository": {
         "type": "git",
