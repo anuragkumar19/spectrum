@@ -29,6 +29,6 @@
         "@commitlint/cli": "^17.0.2",
         "@commitlint/config-conventional": "^17.0.2",
         "husky": "^8.0.1",
-        "lerna": "5.1.4"
+        "lerna": "5.5.4"
     }
 }
