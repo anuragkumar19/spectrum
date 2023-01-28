@@ -1,9 +1,9 @@
 <template>
   <v-card class="my-4">
     <v-card-text>
-      <h3 v-if="device.geo">
-        <v-icon>mdi-map-marker</v-icon> {{ device.geo?.city }}
-        {{ device.geo?.region }} {{ device.geo?.country }}
+      <h3 v-if="!!device.geo">
+        <v-icon>mdi-map-marker</v-icon> {{ device.geo.city }}
+        {{ device.geo.region }} {{ device.geo.country }}
       </h3>
       <h3>        
         <v-icon>mdi-map-marker</v-icon> Failed to Detected
