@@ -11,7 +11,7 @@ const DeviceSchema = new mongoose.Schema(
         },
         geo: {
             type: Object,
-            required: true,
+            //required: true,
         },
         clientInfo: {
             type: Object,
